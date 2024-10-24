@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="tareas">
+    </ul>
+  
+    <script>
+    
+        /* Crea una clase ListaTareas que tenga un método para agregar tareas a una lista
+        (<ul>). El método deberá crear un nuevo elemento <li> en el DOM con la tarea
+        proporcionada y con identificador único para cada uno. */
+
+        class ListaTareas{
+            constructor(tarea, codigo){
+                this.tarea = tarea;
+                this.codigo = codigo;
+            }
+
+            agregarTarea(){
+                const nuevoLi = document.createElement('li');
+                nuevoLi.textContent = `La tares es: ${this.tarea} y el codigo de la tarea es: ${this.codigo}.`;
+                document.getElementById('tareas').appendChild(nuevoLi);
+            }
+        }
+
+        const t1 = new ListaTareas("Sumar dos numeros", "111");
+        const t2 = new ListaTareas ("Aprenderse el texto", "222");
+
+        t1.agregarTarea()
+        t2.agregarTarea()
+
+
+
+    </script>
+
+</body>
+</html>

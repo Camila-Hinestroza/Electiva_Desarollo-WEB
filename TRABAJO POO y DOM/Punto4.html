@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="tareas"> </ul>
+
+    <script>
+       
+        /* Crea una clase AdministradorDeTareas que tenga métodos para agregar,
+        modificar y eliminar tareas en una lista. Cada tarea debe aparecer el nombre de
+        la tarea, la persona a quien se le asignó y todo esto en un <li> con botones para
+        "Editar" y "Eliminar". */
+
+        class AdministradorDeTareas {
+            constructor() {
+                this.tareas = []; 
+                this.listaTareas = document.getElementById('tareas'); 
+            }
+
+            agregarTarea(nombre, persona) {
+                const tarea = {
+                    id: Date.now(), 
+                    nombre,
+                    persona
+                };
+                this.tareas.push(tarea); 
+
+                const li = document.createElement('li');
+                li.id = tarea.id; 
+                li.textContent = `El nombre de la tarea es: ${tarea.nombre} y la persona a la que se le asignó esta tarea es: ${tarea.persona}.`;
+
+                const botonModificar = document.createElement('button');
+                botonModificar.textContent = 'Modificar';
+                botonModificar.addEventListener('click', () => {
+                    const nuevoNombre = prompt('Nuevo nombre de la tarea:', tarea.nombre);
+                    const nuevaPersona = prompt('Nueva persona asignada:', tarea.persona);
+                    if (nuevoNombre && nuevaPersona) {
+                        this.modificarTarea(tarea.id, nuevoNombre, nuevaPersona); 
+                    }
+                });
+
+                const botonEliminar = document.createElement('button');
+                botonEliminar.textContent = 'Eliminar';
+                botonEliminar.addEventListener('click', () => {
+                    this.eliminarTarea(tarea.id); 
+                });
+
+                li.appendChild(botonModificar);
+                li.appendChild(botonEliminar);
+
+                this.listaTareas.appendChild(li);
+            }
+
+            modificarTarea(id, nuevoNombre, nuevaPersona) {
+                const tarea = this.tareas.find(t => t.id === id);
+                if (tarea) {
+                    tarea.nombre = nuevoNombre;
+                    tarea.persona = nuevaPersona;
+
+                    const li = document.getElementById(id);
+                    li.firstChild.textContent = `El nombre de la tarea es: ${tarea.nombre} y la persona a la que se le asignó esta tarea es: ${tarea.persona}.`;
+                }
+            }
+
+            eliminarTarea(id) {
+                this.tareas = this.tareas.filter(t => t.id !== id);
+
+                const li = document.getElementById(id);
+                if (li) {
+                    li.remove();
+                }
+            }
+        }
+
+        const t1 = new AdministradorDeTareas();
+        const t2 = new AdministradorDeTareas();
+
+        t1.agregarTarea("Sumar dos números", "Camila");
+        t2.agregarTarea("Aprenderse el texto", "Juan");
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="administrador">Mostrar Administrador</button>
+    <button id="comercial">Mostrar Comercial</button>
+    
+    <p id="mensaje"></p>
+
+    <script>
+        
+        /*Crea una clase padre llamada Usuario que tenga las propiedades nombre y edad.
+        Añade dos clases hijas Administrador y Comercial, cada una con un método que
+        muestre un mensaje en un párrafo del DOM con el nombre, edad y su rol dentro
+        de la empresa al presionar un botón*/
+
+        class Usuario{
+            constructor(nombre, edad){
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+
+        }
+
+        class Administrador extends Usuario{
+            constructor(nombre, edad){
+                super(nombre, edad);
+            }
+
+            mensajeAdm(){
+                const mensaje = `Mi nombre es: ${this.nombre}, mi edad es de ${this.edad} años y mi rol es de Administrador. `
+                document.getElementById('mensaje').innerText = mensaje;
+            }
+        }
+
+        class Comercial extends Usuario{
+            constructor(nombre, edad){
+                super(nombre, edad)
+            }
+
+            mensajeCom(){
+                const mensaje = `Mi nombre es: ${this.nombre}, mi edad es de ${this.edad} años y mi rol es de Comercial. `
+                document.getElementById('mensaje').innerText = mensaje;
+            }
+        }
+
+        const u1 = new Administrador("Sara", "25")
+        const u2 = new Comercial("Andres", "30")
+
+        
+        document.getElementById('administrador').addEventListener('click', function() {
+            u1.mensajeAdm();
+        });
+
+        document.getElementById('comercial').addEventListener('click', function() {
+            u2.mensajeCom();
+        });
+
+    </script>
+
+</body>
+</html>
