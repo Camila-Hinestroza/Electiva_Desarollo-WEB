@@ -1,0 +1,64 @@
+body {
+  background-color: #f0f4f8; 
+  font-family: 'Arial', sans-serif; 
+  text-align: center; 
+}
+
+.galeria {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 20px; 
+  background-color: #ffffff; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.imagen-lista {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+.imagen {
+  width: 350px; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  text-align: center; 
+  margin: 10px; 
+  background-color: #f9f9f9; 
+  transition: transform 0.3s; 
+}
+
+.imagen:hover {
+  transform: scale(1.05); /* Escala ligera al pasar el ratón */
+}
+
+.imagen img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px;
+}
+
+.galeria-button {
+  padding: 10px 20px; 
+  font-size: 16px; 
+  color: white; 
+  background-color: #97bbda; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.2s; 
+  margin: 10px; 
+}
+
+.galeria-button:hover {
+  background-color: #5a6268; 
+  transform: scale(1.05); /* Efecto de escalado al pasar el ratón */
+}
+
+.galeria-button:focus {
+  outline: none; /* Sin contorno al enfocar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+}
