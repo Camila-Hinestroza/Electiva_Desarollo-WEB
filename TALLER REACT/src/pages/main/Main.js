@@ -14,19 +14,14 @@ const Main = () => {
         LoaderAllItems(setcleanDataDetail, url, id)
     }, [id, url, setcleanDataDetail])
 
-
-    /*return (
+    //No utilice esta pagina
+    return (
         <div>
             <h1>Interfaz SBS</h1>
             <TableMain data={cleanDataDetail}/>
         </div>
-    )*/
+    )
 
-        return (
-            <div>
-                <h1>Main</h1>
-            </div>
-        )
 
 }
 

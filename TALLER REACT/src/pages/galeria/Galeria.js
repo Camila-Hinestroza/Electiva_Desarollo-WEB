@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { fetchRandomImages } from '../../../services/Api';
-import ImagenIndividual from './ImagenIndividual';
-import '../../../styles/Galeria.css'; 
+import { fetchRandomImages } from '../../services/Api';
+import ImagenIndividual from './components/ImagenIndividual';
+import './../../styles/Galeria.css'; 
 
 const Galeria = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [imageCount, setImageCount] = useState(3); 
+  const [imageCount, setImageCount] = useState(3);
 
   const handleImageCountChange = (count) => {
     setImageCount(count);
-    setLoading(true); // Opcional: indica que se están cargando nuevas imágenes
+    setLoading(true); 
   };
 
   useEffect(() => {

@@ -32,7 +32,7 @@ body {
 }
 
 .imagen:hover {
-  transform: scale(1.05); /* Escala ligera al pasar el ratón */
+  transform: scale(1.05); 
 }
 
 .imagen img {
@@ -55,10 +55,10 @@ body {
 
 .galeria-button:hover {
   background-color: #5a6268; 
-  transform: scale(1.05); /* Efecto de escalado al pasar el ratón */
+  transform: scale(1.05); 
 }
 
 .galeria-button:focus {
-  outline: none; /* Sin contorno al enfocar */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+  outline: none; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }

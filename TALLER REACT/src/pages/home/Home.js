@@ -1,5 +1,5 @@
 import React from "react";
-import GaleriaContexto from "../main/components/GaleriaContexto.js"
+import GaleriaContexto from "./components/GaleriaContexto"
 
 const Home = () => {
     return (
